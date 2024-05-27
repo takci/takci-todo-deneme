@@ -7,12 +7,6 @@ export default function Modal() {
 
     const modal = modals.find(m => m.name === name)
 
-    if(!modal) {
-        return (
-            <div>Modal Bulunamadi</div>
-        )
-    }
-
     const ModalElement = modal.element ;
 
     return (
