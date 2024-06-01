@@ -1,22 +1,22 @@
 import React, { useState } from 'react'
 import { nanoid } from 'nanoid'
-import { useDispatch, useSelector } from 'react-redux'
-import { addTodo } from '../stores/todo'
+import { useSelector } from 'react-redux'
+import { addTodoHandle } from '../utils'
+import { modal } from '../utils'
 
 export default function AddTodo() {
 
-    const dispatch = useDispatch()
     const {user} = useSelector(state => state.auth)
     const [todo, setTodo] = useState('')
     
     const submitHandle = e => {
         e.preventDefault()
-        dispatch(addTodo({
+        addTodoHandle({
             title: todo,
             done: false,
             id: nanoid(),
             user: user.id 
-        }))
+        })
         setTodo('')
     }
     return (

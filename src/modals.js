@@ -1,9 +1,12 @@
 import EditTodo from "./modals/edit-todo"
 
+const name = 'edit-todo'
+const element = EditTodo
+
 const modals = [
     {
-        name: 'edit-todo',
-        element: EditTodo
+        name,
+        element,
     }
 ]
 

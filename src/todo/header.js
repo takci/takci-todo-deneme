@@ -1,17 +1,12 @@
-import { useSelector, useDispatch } from "react-redux"
-import { login, logout } from "../stores/auth"
+import { useSelector } from "react-redux"
+import { loginHandle, logoutHandle } from "../utils"
 
 export default function Header() {
 
-    const dispatch = useDispatch()
     const { user } = useSelector(state => state.auth)
 
-    const loginHandle = user => {
-        dispatch(login(user))
-    }
-
-    const logoutHandle = () => {
-        dispatch(logout())
+    const login = user => {
+        loginHandle(user)
     }
 
     return (
@@ -19,8 +14,11 @@ export default function Header() {
             <h2>Logo</h2>
             {!user && (
                 <nav>
-                    <button onClick={() => loginHandle({ id: 1, username: 'furkantakci'})}>furkantakci olarak giriş yap</button>
-                    <button onClick={() => loginHandle({ id: 2, username: 'egeozdengiz'})}>egeozdengiz olarak giriş yap</button>
+                    <button onClick={() => login({ id: 1, username: 'furkantakci'})}>furkantakci olarak giriş yap</button>
+                    <button onClick={() => login({ id: 2, username: 'egeozdengiz'})}>egeozdengiz olarak giriş yap</button>
+                    <button onClick={() => login({ id: 3, username: 'esseginsiki'})}>esseginsiki olarak giriş yap</button>
+                    <button onClick={() => login({ id: 4, username: 'bestekarmehmet'})}>bestekarmehmet olarak giriş yap</button>
+                    <button onClick={() => login({ id: 5, username: 'alihankasap'})}>alihankasap olarak giriş yap</button>
                 </nav>
             )}
             {user && (
