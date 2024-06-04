@@ -11,21 +11,22 @@ export default function Header() {
 
     return (
         <header className="header">
-            <h2>Logo</h2>
+            <h2 className="ana-baslik">Basic Todo App</h2>
             {!user && (
-                <nav>
-                    <button onClick={() => login({ id: 1, username: 'furkantakci'})}>furkantakci olarak giriş yap</button>
-                    <button onClick={() => login({ id: 2, username: 'egeozdengiz'})}>egeozdengiz olarak giriş yap</button>
-                    <button onClick={() => login({ id: 3, username: 'esseginsiki'})}>esseginsiki olarak giriş yap</button>
-                    <button onClick={() => login({ id: 4, username: 'bestekarmehmet'})}>bestekarmehmet olarak giriş yap</button>
-                    <button onClick={() => login({ id: 5, username: 'alihankasap'})}>alihankasap olarak giriş yap</button>
+                <nav className="user-buttons">
+                    <button className="user-button" onClick={() => login({ id: 1, username: 'User - 1'})}>Login as User 1</button>
+                    <button className="user-button" onClick={() => login({ id: 2, username: 'User - 2'})}>Login as User 2</button>
+                    <button className="user-button" onClick={() => login({ id: 3, username: 'User - 3'})}>Login as User 3</button>
+                    <button className="user-button" onClick={() => login({ id: 4, username: 'User - 4'})}>Login as User 4</button>
+                    <button className="user-button" onClick={() => login({ id: 5, username: 'User - 5'})}>Login as User 5</button>
                 </nav>
             )}
             {user && (
-                <nav>
-                    Hoşgeldin, {user.username}
-                    <button onClick={logoutHandle}>Logout</button>
+                <div className="profil">
+                <nav className="hosgeldin">
+                    Hello, {user.username}. Write some task for today! <br/>
                 </nav>
+                    <button className="logout-btn" onClick={logoutHandle}>Logout</button></div>
             )}
         </header>
     )

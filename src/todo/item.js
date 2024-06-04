@@ -16,14 +16,14 @@ export default function TodoItem({ todo }) {
     }
 
     return (
-        <li>
-            <span style={{textDecoration: todo.done ? 'line-through' : false}} >
+        <li className="list">
+            <span className="todo-items" style={{textDecoration: todo.done ? 'line-through' : false}} >
                 {todo.title} - {todo.user}
             </span>
             {todo.user === user.id && (
             <>  
-                <button onClick={editHandle}>Düzenle</button>
-                <button onClick={deleteHandle}>Sil</button>
+                <button className="edit-btn" onClick={editHandle}>Düzenle</button>
+                <button className="delete-btn" onClick={deleteHandle}>Sil</button>
             </>
             )}
         </li>

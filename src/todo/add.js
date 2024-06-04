@@ -20,9 +20,9 @@ export default function AddTodo() {
         setTodo('')
     }
     return (
-        <form onSubmit={submitHandle}>
-            <input type="text" value={todo} onChange={e => setTodo(e.target.value)} placeholder='todo yazın' />
-            <button disabled={!todo || !user} type='submit'>Ekle</button>
+        <form className='form-todos' onSubmit={submitHandle}>
+            <input className='todo-input' type="text" value={todo} onChange={e => setTodo(e.target.value)} placeholder='Type some todos' />
+            <button className='add-btn' disabled={!todo || !user} type='submit'>Add</button>
         </form>
     )
 }
